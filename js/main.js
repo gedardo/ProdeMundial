@@ -28,17 +28,18 @@ function generadorPartidos() {
 }
 
 function generadorPredicciones() {
-    predicciones.push(new prediccion(11, "ARGENTINA VS BRASIL", "ARGENTINA"))
-    predicciones.push(new prediccion(12, "ARGENTINA VS MEXICO", "EMPATE"))
-    predicciones.push(new prediccion(13, "BRASIL VS MEXICO", "BRASIL"))
-    predicciones.push(new prediccion(21, "ECUADOR VS COLOMBIA", "ECUADOR"))
-    predicciones.push(new prediccion(22, "ECUADOR VS PANAMA", "ECUADOR"))
-    predicciones.push(new prediccion(23, "COLOMBIA VS PANAMA", "COLOMBIA"))
-    predicciones.push(new prediccion(31, "CHILE VS BOLIVIA", "EMPATE"))
-    predicciones.push(new prediccion(32, "CHILE VS VENEZUELA", "VENEZUELA"))
+    predicciones.push(new Prediccion(11, "ARGENTINA VS BRASIL", "ARGENTINA"))
+    predicciones.push(new Prediccion(12, "ARGENTINA VS MEXICO", "EMPATE"))
+    predicciones.push(new Prediccion(13, "BRASIL VS MEXICO", "BRASIL"))
+    predicciones.push(new Prediccion(21, "ECUADOR VS COLOMBIA", "ECUADOR"))
+    predicciones.push(new Prediccion(22, "ECUADOR VS PANAMA", "ECUADOR"))
+    predicciones.push(new Prediccion(23, "COLOMBIA VS PANAMA", "COLOMBIA"))
+    predicciones.push(new Prediccion(31, "CHILE VS BOLIVIA", "EMPATE"))
+    predicciones.push(new Prediccion(32, "CHILE VS VENEZUELA", "VENEZUELA"))
 }
 
 generadorPartidos()
+generadorPredicciones()
 
 function generarPrediccion(){
 let idPartido = parseInt(prompt("ingresa el numero de partido a predecir:"))        	

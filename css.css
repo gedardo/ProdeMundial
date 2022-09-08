@@ -1,0 +1,43 @@
+H1 {
+    align-items: center;
+    text-align: center;
+}
+
+#titulo {
+    text-align: center;
+}
+
+.login {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login>p {
+    /* padding: 20px; */
+    margin: 10px;
+}
+
+.login>input {
+    height: 50px;
+    width: 300px;
+    margin: 20px;
+}
+
+button{
+    margin: 20px;
+}
+
+table {
+    margin-top: 50px;
+}
+
+h4 {
+    color: black;
+    text-align: center;
+}
+
+.text-rojo {
+    color: red;
+}

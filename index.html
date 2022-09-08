@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="css.css">
     <title>Ciclos e Iteraciones</title>
 
 </head>
+
 <body>
     <h1>Gerardo Navarro</h1>
-    <h2>Desafio: incorporar arrays</h2>
+    <h2>Primera entrega final</h2>
     <img src="descarga.png" alt="">
+
+    <article>
+        <p>usuario= usuario -- pass=123</p>
+        <h1 id="titulo">Login</h1>
+        <div class="login" id="login">
+            <p id="parrafo">Usuario</p>
+            <input type="search" id="usuarioNom" placeholder="Ingresa el nombre de usuario">
+            <p id="parrafo">contraseña</p>
+            <input type="search" id="usuarioPass" placeholder="Ingresa la contraseña">
+        </div>
+        <div class="login">
+            <button onclick="loginUsuario()">INGRESAR</button>
+        </div>
+        
+        <h4 id="estadoLogin"></h4>
+        <table id="tablaPred">
+            <tbody id="tabla">
+
+            </tbody>
+        </table>
+        <footer>
+            <DIv class="login">
+                <button onclick="cargarPredicciones()">MOSTRAR PREDICCIONES</button>
+            <button onclick="agregarPrediccion()">AGREGAR PREDICCION</button>
+            </DIv>
+        </footer>
+    </article>
     <script src="js/main.js"></script>
+    <script src="js/dom.js"></script>
 </body>
+
 </html>
