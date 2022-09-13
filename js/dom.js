@@ -1,6 +1,13 @@
 const titulo = document.getElementById("titulo")
 const tabla = document.getElementById("tablaPred")
-const divLogin = document.getElementById("login")
+const divLogin = document.querySelector("#lolo")
+const divCard = document.querySelector("cards")
+const botonGuardar = document.querySelector("#guardarPred")
+const botonBorrar = document.querySelector("#borrarPred")
+const estado = document.getElementById("estadoLogin")
+
+botonGuardar.addEventListener("click", () => chec())
+botonBorrar.addEventListener("click", ()=> borrarRadios())
 
 function agregarPrediccion() {
     let fila = ""
@@ -14,7 +21,9 @@ function agregarPrediccion() {
     })
 }
 
-function cargarPredicciones() {
+function cargarPredicciones(PredUsuario) {
+    estado.innerText = "Predicciones realizadas"
+    estado.className = ""
     tabla.innerHTML = ""
     let columna = `<thead>
                         <tr>
@@ -25,7 +34,7 @@ function cargarPredicciones() {
                     </thead>`
     tabla.innerHTML += columna
     let fila = ""
-    predicciones.forEach(Prediccion => {
+    PredUsuario.forEach(Prediccion => {
         fila = `<tr>
                      <td>${Prediccion.id}</td>
                     <td>${Prediccion.partido}</td>
@@ -38,13 +47,10 @@ function cargarPredicciones() {
 function loginUsuario() {
     let nombre = document.getElementById("usuarioNom")
     let pass = document.getElementById("usuarioPass")
-    const estado = document.getElementById("estadoLogin")
 
     if (nombre.value === "usuario" & pass.value === "123") {
-        cargarPredicciones()
-        titulo.innerText = `Bienvenido ${nombre.value}`
         divLogin.innerHTML = ""
-        estado.innerText = "Predicciones realizadas"
+        estado.innerHTML = `Bienvenido ${nombre.value}`
         estado.className = ""
     }
     else {
@@ -52,3 +58,61 @@ function loginUsuario() {
         estado.className = "text-rojo"
     }
 }
+
+function chec() {
+    let predUsuario = []
+    const radios = document.querySelectorAll("input:checked")
+    if (radios.length > 0) {
+        radios.forEach(value => {
+            predicciones.forEach(pred => {
+                if (value.id === pred.id) {
+                    predUsuario.push(new Prediccion(pred.id, pred.partido, pred.resultado))
+                }
+            })
+        })
+        cargarPredicciones(predUsuario)
+    } else {
+        alert('No hay ninún elemento activo');
+    }
+    listarRadios(radios)
+}
+
+function listarRadios(radios) {
+    radios.forEach((radio) => {
+        console.log(radio.id)
+    })
+}
+
+function borrarRadios(){
+    let radios = document.querySelectorAll("input:checked")
+    radios.forEach((input) => input.checked = false)
+    tabla.innerHTML = ""
+    estado.innerText = ""
+}
+
+/*
+const inputFiltrar = document.querySelector("input")
+
+function filtrarProductos() { //FILTRAR PRODUCTOS EN LA TABLA INGRESANDO PARTE DEL NOMBRE
+    inputFiltrar.value = inputFiltrar.value.trim().toUpperCase()
+    if (inputFiltrar.value !== "") {
+        const resultado = productos.filter(producto => producto.nombre.includes(inputFiltrar.value))
+              if (resultado.length === 0) {
+                console.clear()
+                console.warn("No se encontraron productos.")
+                cargarProductos(productos)
+              } else {
+                cargarProductos(resultado)
+              }
+    } else {
+        cargarProductos(productos)
+    }
+}
+
+inputFiltrar.addEventListener("input", filtrarProductos) //A medida que escribimos.
+
+// inputFiltrar.addEventListener("keypress", (e)=> {      //Cuando presionamos ENTER
+//     if (e.key === "Enter") {
+//         filtrarProductos()
+//     }
+// })*/

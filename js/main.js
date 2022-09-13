@@ -28,14 +28,24 @@ function generadorPartidos() {
 }
 
 function generadorPredicciones() {
-    predicciones.push(new Prediccion(11, "ARGENTINA VS BRASIL", "ARGENTINA"))
-    predicciones.push(new Prediccion(12, "ARGENTINA VS MEXICO", "EMPATE"))
-    predicciones.push(new Prediccion(13, "BRASIL VS MEXICO", "BRASIL"))
-    predicciones.push(new Prediccion(21, "ECUADOR VS COLOMBIA", "ECUADOR"))
-    predicciones.push(new Prediccion(22, "ECUADOR VS PANAMA", "ECUADOR"))
-    predicciones.push(new Prediccion(23, "COLOMBIA VS PANAMA", "COLOMBIA"))
-    predicciones.push(new Prediccion(31, "CHILE VS BOLIVIA", "EMPATE"))
-    predicciones.push(new Prediccion(32, "CHILE VS VENEZUELA", "VENEZUELA"))
+    predicciones.push(new Prediccion("gap1l", "ARGENTINA VS MEXICO", "ARGENTINA"))
+    predicciones.push(new Prediccion("gap1e", "ARGENTINA VS MEXICO", "EMPATE"))
+    predicciones.push(new Prediccion("gap1v", "ARGENTINA VS MEXICO", "MEXICO"))
+    predicciones.push(new Prediccion("gap2l", "ARGENTINA VS POLONIA", "ARGENTINA"))
+    predicciones.push(new Prediccion("gap2e", "ARGENTINA VS POLONIA", "EMPATE"))
+    predicciones.push(new Prediccion("gap2v", "ARGENTINA VS POLONIA", "POLONIA"))
+    predicciones.push(new Prediccion("gap3l", "POLONIA VS MEXICO", "POLONIA"))
+    predicciones.push(new Prediccion("gap3e", "POLONIA VS MEXICO", "EMPATE"))
+    predicciones.push(new Prediccion("gap3v", "POLONIA VS MEXICO", "MEXICO"))
+    predicciones.push(new Prediccion("gap4l", "PERU VS MEXICO", "PERU"))
+    predicciones.push(new Prediccion("gap4e", "PERU VS MEXICO", "EMPATE"))
+    predicciones.push(new Prediccion("gap4v", "PERU VS MEXICO", "MEXICO"))
+    predicciones.push(new Prediccion("gap5l", "ARGENTINA VS PERU", "ARGENTINA"))
+    predicciones.push(new Prediccion("gap5e", "ARGENTINA VS PERU", "EMPATE"))
+    predicciones.push(new Prediccion("gap5v", "ARGENTINA VS PERU", "PERU"))
+    predicciones.push(new Prediccion("gap6l", "PERU VS POLONIA", "PERU"))
+    predicciones.push(new Prediccion("gap6e", "PERU VS POLONIA", "EMPATE"))
+    predicciones.push(new Prediccion("gap6e", "PERU VS POLONIA", "POLONIA"))
 }
 
 generadorPartidos()
