@@ -1,5 +1,6 @@
 const predicciones = []
 const partidos = []
+const usuarios = []
 
 class Prediccion {
     constructor(id, partido, resultado) {
@@ -13,6 +14,13 @@ class Partido {
     constructor(id, partido) {
         this.id = id
         this.partido = partido
+    }
+}
+
+class Usuario {
+    constructor(nombre, pass) {
+        this.nombre = nombre
+        this.pass = pass
     }
 }
 
@@ -51,20 +59,20 @@ function generadorPredicciones() {
 generadorPartidos()
 generadorPredicciones()
 
-function generarPrediccion(){
-let idPartido = parseInt(prompt("ingresa el numero de partido a predecir:"))        	
-let resultado = partidos.find((partido)=> partido.id === idPartido)
-if (resultado !== undefined) {
-    let prediccionPartido = prompt(`el partido es: ${resultado.partido}. Ingresa tu prediccion:`)
-    nuevaPrediccion = new Prediccion (resultado.id, resultado.partido, prediccionPartido)
-    console.log(nuevaPrediccion)
-} else {
-    console.warn("No se encontró el numero de partido.")
-}
+function generarPrediccion() {
+    let idPartido = parseInt(prompt("ingresa el numero de partido a predecir:"))
+    let resultado = partidos.find((partido) => partido.id === idPartido)
+    if (resultado !== undefined) {
+        let prediccionPartido = prompt(`el partido es: ${resultado.partido}. Ingresa tu prediccion:`)
+        nuevaPrediccion = new Prediccion(resultado.id, resultado.partido, prediccionPartido)
+        console.log(nuevaPrediccion)
+    } else {
+        console.warn("No se encontró el numero de partido.")
+    }
 }
 
 function listarPartidos() {
-    partidos.forEach((partido)=> {
+    partidos.forEach((partido) => {
         console.table(partido)
     })
     console.table(partidos)

@@ -5,9 +5,15 @@ const divCard = document.querySelector("cards")
 const botonGuardar = document.querySelector("#guardarPred")
 const botonBorrar = document.querySelector("#borrarPred")
 const estado = document.getElementById("estadoLogin")
+const inputNombre = document.querySelector("#usuarioNom")
+const inputPass = document.querySelector("#usuarioPass")
+const btnLogin = document.querySelector("#loginUsuario")
+const btnRegistrar = document.querySelector("#regUsuario")
 
 botonGuardar.addEventListener("click", () => chec())
 botonBorrar.addEventListener("click", ()=> borrarRadios())
+btnLogin.addEventListener("click", () => loginUsuario())
+btnRegistrar.addEventListener("click", () => registrarUsuario())
 
 function agregarPrediccion() {
     let fila = ""
@@ -44,27 +50,12 @@ function cargarPredicciones(PredUsuario) {
     })
 }
 
-function loginUsuario() {
-    let nombre = document.getElementById("usuarioNom")
-    let pass = document.getElementById("usuarioPass")
-
-    if (nombre.value === "usuario" & pass.value === "123") {
-        divLogin.innerHTML = ""
-        estado.innerHTML = `Bienvenido ${nombre.value}`
-        estado.className = ""
-    }
-    else {
-        estado.innerText = "usuario o contraseña incorrectos"
-        estado.className = "text-rojo"
-    }
-}
-
 function chec() {
     let predUsuario = []
     const radios = document.querySelectorAll("input:checked")
     if (radios.length > 0) {
         radios.forEach(value => {
-            predicciones.forEach(pred => {
+            predicciones.forEach((pred) => {
                 if (value.id === pred.id) {
                     predUsuario.push(new Prediccion(pred.id, pred.partido, pred.resultado))
                 }
